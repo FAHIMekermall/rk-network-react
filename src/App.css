@@ -19,7 +19,20 @@ html {
 	text-rendering: optimizeLegibility;
 	scroll-behavior: smooth;
 }
+.header-sec {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: stretch;
+}
 
+.header-sec a {
+	color: gray;
+}
 /* setup & reusable stylings */
 img {
 	width: 100%;
@@ -78,7 +91,7 @@ section {
 }
 
 /* header */
-.header {
+.banner {
 	background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)),
 		url(./assets/header-bg.jpg);
 	min-height: 100vh;
@@ -398,10 +411,10 @@ section {
 }
 .pricing-item:hover {
 	-webkit-box-shadow: 0 0 10px gray;
-	box-shadow: 0 0 10px gray;
-    background-color: rgba(128, 128, 128, 0.322);
-    transform: scale(0.95);
-    transition: all 0.3s;
+	box-shadow: 0 0 10px rgb(180, 173, 173);
+	background-color: rgba(207, 204, 204, 0.322);
+	transform: scale(0.95);
+	transition: all 0.3s;
 }
 
 /* testimonial */
@@ -574,9 +587,9 @@ section {
 		gap: 2rem;
 	}
 	.pricing-item {
-        transform: scale(0.9);
+		transform: scale(0.9);
 		margin: 0;
-        border-radius: 20px;
+		border-radius: 20px;
 	}
 	.testimonial-item p {
 		width: 75%;

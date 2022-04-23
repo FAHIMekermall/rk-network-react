@@ -1,7 +1,12 @@
 import React from "react"
+import { useLocation } from "react-router-dom"
 
 const Footer = () => {
 	const year = new Date().getFullYear()
+	const {pathname} = useLocation()
+	if (pathname === '/' || pathname ==='home'){
+		return ''
+	}
 	return (
 		<div>
 			<footer class="footer center">

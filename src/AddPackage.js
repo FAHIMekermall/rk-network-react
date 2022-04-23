@@ -22,7 +22,11 @@ const AddPackage = () => {
 
 	return (
 		<div>
-			<form onSubmit={handleSubmit(onSubmit)}>
+			<form style={{display:'grid', gridGap:'25px', justifyContent:"center"}} onSubmit={handleSubmit(onSubmit)}>
+
+				<h1 style={{color:'red', }}>
+					Add/update package
+				</h1>
 				<input
 					type="text"
 					placeholder="package-name"
@@ -31,7 +35,28 @@ const AddPackage = () => {
 						maxLength: 100,
 					})}
 				/>
-				<textarea
+				<input
+					type="text"
+					placeholder="description"
+					{...register("description", {
+						required: true,
+					})}
+				/>
+				<input
+					type="text"
+					placeholder="description"
+					{...register("description", {
+						required: true,
+					})}
+				/>
+				<input
+					type="text"
+					placeholder="description"
+					{...register("description", {
+						required: true,
+					})}
+				/>
+				<input
 					type="text"
 					placeholder="description"
 					{...register("description", {
