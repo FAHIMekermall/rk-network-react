@@ -6,19 +6,29 @@ import Packages from "./Pages/Packages/Packages"
 import Team from "./Pages/Team/Team"
 import Header from "./Shared/Header/Header"
 import Footer from "./Pages/Footer/Footer"
+import RecquireAuth from "./Shared/RecquireAuth/RecquireAuth"
+import Login from "./Pages/Login/Login"
+import Admin from "./Pages/admin/Admin"
 
 function App() {
 	return (
 		<>
-		<Header></Header>
+			<Header></Header>
 			<Routes>
 				<Route path="/" element={<Home></Home>}></Route>
 				<Route path="/package" element={<Packages></Packages>}></Route>
-				<Route path="our-team" element={<Team/>} ></Route>
+				<Route path="our-team" element={<Team />}></Route>
+				<Route path="/login" element={<Login></Login>}></Route>
 				<Route
-					path="/admin-manage-package"
-					element={<AddPackage></AddPackage>}
-				></Route>
+					path="/admin"
+					element={
+						<RecquireAuth>
+							<Admin></Admin>
+						</RecquireAuth>
+					}
+				>
+					<Route></Route>
+				</Route>
 			</Routes>
 			<Footer></Footer>
 		</>

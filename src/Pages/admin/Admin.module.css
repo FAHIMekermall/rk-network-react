@@ -1,0 +1,15 @@
+.admin_header{
+    display:  flex;   
+    justify-content: end;
+}
+.admin_header a{
+    padding: 10px 20px 10px 20px;
+    color: gray;
+}
+
+@media only screen and (max-width: 600px) {
+    .admin_header{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

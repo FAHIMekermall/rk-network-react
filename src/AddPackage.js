@@ -37,29 +37,29 @@ const AddPackage = () => {
 				/>
 				<input
 					type="text"
-					placeholder="description"
-					{...register("description", {
+					placeholder="description 1"
+					{...register("description1", {
 						required: true,
 					})}
 				/>
 				<input
 					type="text"
-					placeholder="description"
-					{...register("description", {
+					placeholder="description 2"
+					{...register("description2", {
 						required: true,
 					})}
 				/>
 				<input
 					type="text"
-					placeholder="description"
-					{...register("description", {
+					placeholder="description 3"
+					{...register("description3", {
 						required: true,
 					})}
 				/>
 				<input
 					type="text"
-					placeholder="description"
-					{...register("description", {
+					placeholder="description 4"
+					{...register("description4", {
 						required: true,
 					})}
 				/>
