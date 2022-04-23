@@ -508,22 +508,25 @@ section {
 	padding: 0.8rem 3.4rem;
 	border-radius: 2rem;
 	transition: var(--transition);
+	width: auto;
+	cursor: pointer;
 }
 .submit-btn:hover {
 	background: var(--black);
 }
 
 #sorry {
-	color: #1bbc9c;
+	color: rgba(128, 128, 128, 0.575);
 	font-family: cursive;
 	font-weight: 600;
-	font-size: 2vh;
+	font-size: 0.9rem;
 }
 .contact-right div {
 	margin: 2rem 0;
 }
 .contact-right .text {
-	font-family: "Roboto Mono", monospace;
+	font-family: sans-serif;
+	color: #1bbc9c;
 }
 /* footer */
 .footer {

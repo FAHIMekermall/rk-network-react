@@ -9,6 +9,7 @@ import Footer from "./Pages/Footer/Footer"
 import RecquireAuth from "./Shared/RecquireAuth/RecquireAuth"
 import Login from "./Pages/Login/Login"
 import Admin from "./Pages/admin/Admin"
+import Contact from "./Pages/contact/Contact"
 
 function App() {
 	return (
@@ -17,7 +18,8 @@ function App() {
 			<Routes>
 				<Route path="/" element={<Home></Home>}></Route>
 				<Route path="/package" element={<Packages></Packages>}></Route>
-				<Route path="our-team" element={<Team />}></Route>
+				<Route path="/our-team" element={<Team />}></Route>
+				<Route path="/contact" element={<Contact></Contact>}></Route>
 				<Route path="/login" element={<Login></Login>}></Route>
 				<Route
 					path="/admin"
@@ -27,7 +29,7 @@ function App() {
 						</RecquireAuth>
 					}
 				>
-					<Route></Route>
+					<Route path="add-package" element={<AddPackage></AddPackage>}></Route>
 				</Route>
 			</Routes>
 			<Footer></Footer>
