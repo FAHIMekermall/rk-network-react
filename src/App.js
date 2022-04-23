@@ -11,6 +11,7 @@ import Login from "./Pages/Login/Login"
 import Admin from "./Pages/admin/Admin"
 import Contact from "./Pages/contact/Contact"
 import UpdatePackage from "./UpdatePackage"
+import UpdateForm from "./UpdateForm"
 
 function App() {
 	return (
@@ -30,8 +31,14 @@ function App() {
 						</RecquireAuth>
 					}
 				>
-					<Route path="add-package" element={<AddPackage></AddPackage>}></Route>
-					<Route path="update-package" element={<UpdatePackage></UpdatePackage>}></Route>
+					<Route
+						path="add-package"
+						element={<AddPackage></AddPackage>}
+					></Route>
+					<Route
+						path="update-package"
+						element={<UpdatePackage></UpdatePackage>}
+					></Route>
 				</Route>
 			</Routes>
 			<Footer></Footer>

@@ -10,9 +10,8 @@ const AddPackage = () => {
 		handleSubmit,
 		formState: { errors },
 	} = useForm()
-	const [result, setResult] = useState()
-	const onSubmit = (data) => {
-		fetch("https://tranquil-depths-44277.herokuapp.com/package", {
+	const onSubmit = async (data) => {
+		await fetch("https://tranquil-depths-44277.herokuapp.com/package", {
 			body: JSON.stringify(data),
 			headers: {
 				"content-type": "application/json",
@@ -20,12 +19,7 @@ const AddPackage = () => {
 			method: "post",
 		})
 			.then((res) => res.json())
-			.then((result) => setResult(result))
-		if (result?.acknowledged === true) {
-			notifySucces("Package added successfully")
-		} else {
-			notifyError("something went wrong")
-		}
+			.then((result) => notifySucces("Package added successfully"))
 	}
 
 	return (
