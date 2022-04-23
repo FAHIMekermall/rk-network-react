@@ -1,21 +1,34 @@
 import React from "react"
 
-const Package = () => {
+const Package = ({
+	pack: {
+		_id,
+		packageName,
+		description1,
+		description2,
+		description3,
+		description4,
+		cost,
+	},
+	children,
+}) => {
 	return (
 		<div>
 			<div class="pricing-item">
-				<h2>MINI STANDARD</h2>
+				<h2>{packageName}</h2>
 				<div class="price">
-					<span>BDT: 600 tk</span>
+					<span>BDT: {cost} tk</span>
 					<span class="text">Monthly</span>
 				</div>
 				<ul>
-					<li>5 Mbps Internet Bandwidth</li>
-					<li>No Extra Youtube and Facebook</li>
-					<li>No Extra BDIX Bandwidth</li>
-					<li>Unlimited Data. No Fair Usage Policy.</li>
+					<li>{description1}</li>
+					<li>{description2}</li>
+					<li>{description3}</li>
+					<li>{description4}</li>
 				</ul>
+				{children}
 			</div>
+			
 		</div>
 	)
 }

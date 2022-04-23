@@ -1,8 +1,10 @@
-import React from "react"
+import React, { useState } from "react"
+import usePackages from "../../Hooks/usePackages"
 import Package from "../Package/Package"
 
 const Packages = () => {
-	return (
+	const [packages, setPackages] = usePackages()
+	return (	
 		<div>
 			<section class="pricing" id="pricing">
 				<div class="container">
@@ -16,15 +18,7 @@ const Packages = () => {
 					</div>
 
 					<div class="row wow animate__animated animate__fadeInUp animate__slow">
-                        <Package></Package>
-                        <Package></Package>
-                        <Package></Package>
-                        <Package></Package>
-                        <Package></Package>
-                        <Package></Package>
-                        <Package></Package>
-                        <Package></Package>
-                        <Package></Package>
+                        {packages.map(pack => <Package key={pack._id} pack={pack}></Package>)}
                     </div>
 				</div>
 			</section>

@@ -1,15 +1,18 @@
-import React from "react"
+import React, { useState } from "react"
 import { useForm } from "react-hook-form"
+import toast, { Toaster } from "react-hot-toast"
 
 const AddPackage = () => {
+	const notifySucces = (text) => toast.success(text)
+	const notifyError = (text) => toast.error(text)
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
 	} = useForm()
+	const [result, setResult] = useState()
 	const onSubmit = (data) => {
-		console.log(data)
-		fetch("http://localhost:5000/package", {
+		fetch("https://tranquil-depths-44277.herokuapp.com/package", {
 			body: JSON.stringify(data),
 			headers: {
 				"content-type": "application/json",
@@ -17,16 +20,25 @@ const AddPackage = () => {
 			method: "post",
 		})
 			.then((res) => res.json())
-			.then((result) => console.log(result))
+			.then((result) => setResult(result))
+		if (result?.acknowledged === true) {
+			notifySucces("Package added successfully")
+		} else {
+			notifyError("something went wrong")
+		}
 	}
 
 	return (
 		<div>
-			<form style={{display:'grid', gridGap:'25px', justifyContent:"center"}} onSubmit={handleSubmit(onSubmit)}>
-
-				<h1 style={{color:'red', }}>
-					Add/update package
-				</h1>
+			<form
+				style={{
+					display: "grid",
+					gridGap: "25px",
+					justifyContent: "center",
+				}}
+				onSubmit={handleSubmit(onSubmit)}
+			>
+				<h1 style={{ color: "red" }}>Add/update package</h1>
 				<input
 					type="text"
 					placeholder="package-name"
@@ -71,7 +83,9 @@ const AddPackage = () => {
 					})}
 				/>
 				<input type="submit" />
+				<input type="reset" value="Reset" />
 			</form>
+			<Toaster></Toaster>
 		</div>
 	)
 }
