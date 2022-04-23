@@ -121,6 +121,7 @@ section {
 }
 .navbar-brand {
 	font-weight: 500;
+	
 	color: var(--night-rider);
 }
 .navbar-brand span {
@@ -128,10 +129,17 @@ section {
 }
 .navbar-toggler {
 	border: none;
+	z-index: 500;
 	color: var(--mount-meadow);
 }
 .navbar-nav {
 	margin: 0.2rem 0 0.6rem 0;
+}
+.navbar-nav-admin {
+	margin: 0.2rem 0 0.6rem 0;
+	position: absolute;
+	background-color: whitesmoke;
+	width: 100%;
 }
 .nav-item {
 	padding: 0.6rem 0;
@@ -147,9 +155,7 @@ section {
 .nav-link:hover {
 	color: var(--mount-meadow) !important;
 }
-.navbar-collapse {
-	display: none;
-}
+
 .hero-div {
 	flex: 1;
 	flex-direction: column;
